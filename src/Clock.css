@@ -1,0 +1,55 @@
+.PomodoroClock {
+  display: inline-grid;
+  grid-template-areas:
+    'session break'
+    'timer timer'
+    'button button';
+  border: 10px solid black;
+  border-radius: 5rem;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #9575cd;
+}
+
+.BreakContainer {
+  grid-area: break;
+  padding: 1rem;
+}
+
+.SessionContainer {
+  grid-area: session;
+  padding: 1rem;
+}
+
+.TimerContainer {
+  font-size: 200%;
+  margin: 1rem;
+  padding: 2rem;
+  border: 10px solid #311b92;
+  border-radius: 5rem;
+  grid-area: timer;
+  background-color: #757575;
+  color: #eeeeee;
+}
+
+.ControlsContainer {
+  font-size: 200%;
+  grid-area: button;
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem;
+}
+
+.TimerControl {
+  font-size: 125%;
+  display: inline-grid;
+  grid-template-areas:
+    'label label label'
+    'decrement length increment';
+}
+
+.TimerButton {
+  background: inherit;
+  padding: 0;
+}

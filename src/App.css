@@ -1,8 +1,37 @@
 .App {
   text-align: center;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: 2rem;
+}
+
+.AppHeader {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Changa One', sans-serif;
+}
+
+.AppContent {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Baloo Da 2', sans-serif;
+}
+
+.AppFooter {
+  font-size: 75%;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.AppFooter a {
+  text-decoration: none;
+  color: #0000ee;
 }
