@@ -49,7 +49,10 @@ const Timer = (props) => {
   return (
     <React.Fragment>
       <p id={'timer-label'}>{props.label}</p>
-      <p id={'time-left'}>{props.value}</p>
+      <p id={'time-left'} style={{
+        fontFamily: '\'Iceland\', sans-serif',
+        fontSize: '150%',
+      }}>{props.value}</p>
     </React.Fragment>
   )
 }
@@ -114,6 +117,9 @@ class PomodoroClock extends React.Component {
         this.audioBeep.currentTime = 0
         return
       case 'start_stop':
+        if (!this.state.running) {
+          this.audioBeep.load()
+        }
         if (this.state.running && this.state.timerFunction) {
           this.state.timerFunction.cancel()
           this.setState({ timerFunction: null, running: !this.state.running })
@@ -207,8 +213,8 @@ class PomodoroClock extends React.Component {
           <ClockControls running={this.state.running}
                          onClick={this.handleClick}/>
         </div>
-        <audio id='beep' ref={(ref) => this.audioBeep = ref}
-               src='assets/analog-watch-alarm_daniel-simion.mp3'/>
+        <audio id='beep' ref={(ref) => this.audioBeep = ref} playsInline={true}
+               src='assets/Bossa-nova-drum-beat-with-bass-and-synth-rhythm.mp3'/>
       </div>
     )
   }
